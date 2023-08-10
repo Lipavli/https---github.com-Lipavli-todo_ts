@@ -1,0 +1,24 @@
+.editForm{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.editForm input {
+   height: 30px;
+   border-radius: 30px;
+   padding-left: 20px;
+   border: none;
+   color: var(--textColor);
+}
+
+.editForm button{
+    width: 50px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: var(--textColor);
+    color: white;
+    cursor: pointer;
+    border: none;
+}
