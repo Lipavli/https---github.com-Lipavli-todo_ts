@@ -17,17 +17,30 @@ const TasksList: FC<Props> = ({
 }) => {
   return (
     <div className="items-container">
-      {todoList.map((todoItem) => {
-        return (
-          <TodoItem
-            todoItem={todoItem}
-            key={todoItem.id}
-            updateTodo={updateTodo}
-            deleteTodo={deleteTodo}
-            toggleTodo={toggleTodo}
-          />
-        );
-      })}
+      <div className="active">
+        <h2>Active</h2>
+        <div className="active__box">
+          {todoList.map((todoItem) => {
+            return (
+              <TodoItem
+                todoItem={todoItem}
+                key={todoItem.id}
+                updateTodo={updateTodo}
+                deleteTodo={deleteTodo}
+                toggleTodo={toggleTodo}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="pending">
+        <h2>Pending</h2>
+        <div className="pending__box"></div>
+      </div>
+      <div className="completed">
+        <h2>Completed</h2>
+        <div className="completed__box"></div>
+      </div>
     </div>
   );
 };
