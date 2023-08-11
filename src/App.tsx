@@ -7,23 +7,43 @@ import TasksList from "./components/TasksList";
 import useTodos from "./hooks/useTodos";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const App: FC = () => {
+  const {
+    todosList,
+    todosPending,
+    todosCompleted,
+    addTodo,
+    deleteTodo,
+    updateTodo,
+    toggleTodo,
+    onDragEnd
+  } = useTodos();
 
-  const { todosList, addTodo, deleteTodo, updateTodo, toggleTodo } = useTodos();
 
+
+   
+    
+  
   return (
-    <div className="App">
-      <Header/>
-      <Hero/>
-      <TodoInput addTodo={addTodo} />
-      <TasksList
-        todoList={todosList}
-        updateTodo={updateTodo}
-        deleteTodo={deleteTodo}
-        toggleTodo={toggleTodo}
-      />
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className="App">
+        <Header />
+        <Hero />
+        <TodoInput addTodo={addTodo} />
+        <TasksList
+          todoList={todosList}
+          todosCompleted={todosCompleted}
+          todosPending={todosPending}
+          updateTodo={updateTodo}
+          deleteTodo={deleteTodo}
+          toggleTodo={toggleTodo}
+         
+        
+        />
+      </div>
+    </DragDropContext>
   );
 };
 

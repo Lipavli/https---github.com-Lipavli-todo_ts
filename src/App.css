@@ -32,6 +32,10 @@ h1 {
 
 }
 
+h2{
+    color: var(--textColor);
+}
+
 h3 {
     font-size: 30px;
     padding-bottom: 10px;
@@ -63,7 +67,7 @@ header {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 50px 20px;
 
 
 }
@@ -78,10 +82,13 @@ li {
     list-style-type: none;
     cursor: pointer;
     transition: .1s ease-in-out;
+    color: #4f63ad;
+    font-weight: 500;
+
 }
 
 li:hover {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 nav img {
@@ -170,11 +177,7 @@ img.delete {
 
 
 
-
-
-
-
-/* change later */
+/* boxes for tasks*/
 
 
 .pending,
@@ -193,6 +196,7 @@ img.delete {
     width: 300px;
     min-height: 100px;
     border-radius: 30px;
+
 }
 
 .active__box {
